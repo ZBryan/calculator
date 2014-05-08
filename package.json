@@ -1,0 +1,8 @@
+{
+	"name" : "static_express",
+	"description" : "Static Express, with 2 html files a js file and css",
+	"version" : "0.0.1",
+	"dependencies" : {
+		"express" : "^4.0"
+	}
+}
