@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-nodemon');
 
   grunt.initConfig({
     clean: {
@@ -30,7 +31,12 @@ module.exports = function(grunt) {
       options: {
         transform: ['debowerify']
       }
+    },
+    nodemon: {
+      dev: {
+        script: 'server.js'
+      }
     }
   });
-  grunt.registerTask('build', ['clean', 'browserify', 'copy']);
+  grunt.registerTask('build', ['clean', 'browserify', 'copy', 'nodemon:dev']);
 };
